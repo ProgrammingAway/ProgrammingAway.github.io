@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Programming Away</title>
+    <link>http://programmingaway.com/posts/</link>
+    <description>Recent content in Posts on Programming Away</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Dec 2021 20:07:33 -0600</lastBuildDate><atom:link href="http://programmingaway.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Post</title>
+      <link>http://programmingaway.com/posts/my-first-post/</link>
+      <pubDate>Thu, 09 Dec 2021 20:07:33 -0600</pubDate>
+      
+      <guid>http://programmingaway.com/posts/my-first-post/</guid>
+      <description>This is the first post</description>
+    </item>
+    
+  </channel>
+</rss>
