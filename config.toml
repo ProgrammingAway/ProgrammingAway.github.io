@@ -2,3 +2,26 @@ baseURL = 'http://programmingaway.com/'
 languageCode = 'en-us'
 title = 'Programming Away'
 theme = "ananke"
+resourceDir = "../resources"
+publishDir= "public"
+
+DefaultContentLanguage = "en"
+SectionPagesMenu = "main"
+Paginate = 9
+enableRobotsTXT = true
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[params]
+  author = "Brian Ladner"
+  favicon = ""
+  site_logo = "/images/Logo/27504_ProgrammingAway_Logo_AC_GR-012.png"
+  description = "My Programming Journey"
+  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
+  background_color_class = "bg-black"
+  featured_image = "/images/beach-top.jpg"
+  recent_posts_number = 3
+

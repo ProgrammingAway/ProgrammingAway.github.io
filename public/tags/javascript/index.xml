@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on Programming Away</title>
+    <link>http://programmingaway.com/tags/javascript/</link>
+    <description>Recent content in Javascript on Programming Away</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Dec 2021 16:39:10 -0600</lastBuildDate><atom:link href="http://programmingaway.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Garage Door Controller</title>
+      <link>http://programmingaway.com/post/garage_door/</link>
+      <pubDate>Wed, 08 Dec 2021 16:39:10 -0600</pubDate>
+      
+      <guid>http://programmingaway.com/post/garage_door/</guid>
+      <description>I have done many attempts to control my garage door with my phone over the years. I first attempted to control the garage door using sensors and relays and a Raspberry Pi. I loosely followed a guide for a project called IoT Gateway from a site called Low Power Lab. That introduced me to the programming language NodeJS. I learned a lot from this project, which involved programming, circuitry, and controlling the circuits from the program.</description>
+    </item>
+    
+  </channel>
+</rss>
