@@ -2,6 +2,7 @@
 title: "Garage Door Controller"
 date: 2021-12-08T16:39:10-06:00
 draft: false
+omit_header_text: true
 tags:
 - Programming
 - IOT

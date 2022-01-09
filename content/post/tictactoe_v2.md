@@ -2,11 +2,14 @@
 title: "Tic Tac Toe Challenge – Version 2"
 date: 2022-01-08T16:39:10-06:00
 draft: false
+omit_header_text: true
 tags:
 - Programming
 - Python
 featured_image: "/images/posts/tic-tac-toe-gcdabc1c51_1920.jpg"
 ---
+
+{{< figure src="/images/posts/tic-tac-toe-gcdabc1c51_1920.jpg" >}}
 
 Shortly after writing a [Tic Tac Toe program](https://programmingaway.com/post/tictactoe_v1) in python for one of my programming challenges, I ran across a new Tic Tac Toe programming challenge from [Robert Heaton](https://robertheaton.com/2018/10/09/programming-projects-for-advanced-beginners-3-a/). While looking through his challenge, I decided my program was too simple and needed to be updated with better written functions. The functions in my original Tic Tac Toe program were hardcoded in some ways and needed to be more abstracted. Functions need to do just one thing and need to be able to accomodate potential changes in the future without re-writing the function.
 

@@ -2,11 +2,14 @@
 title: "Tic Tac Toe Challenge – Version 1"
 date: 2022-01-06T16:39:10-06:00
 draft: false
+omit_header_text: true
 tags:
 - Programming
 - Python
 featured_image: "/images/posts/toy-ge3f3268ac_1280.jpg"
 ---
+
+{{< figure src="/images/posts/toy-ge3f3268ac_1280.jpg" >}}
 
 In order to get better at programming, I decided to find programming challenges online and track how I solve them here. After a quick search on [Duck Duck Go](https://www.duckduckgo.com/), I found a set of challenges at Ryan’s Tutorials. The first on the list is a Tic Tac Toe game which states:
 

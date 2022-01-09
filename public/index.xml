@@ -13,7 +13,7 @@
       <pubDate>Sat, 08 Jan 2022 16:39:10 -0600</pubDate>
       
       <guid>http://programmingaway.com/post/tictactoe_v2/</guid>
-      <description>Shortly after writing a Tic Tac Toe program in python for one of my programming challenges, I ran across a new Tic Tac Toe programming challenge from Robert Heaton. While looking through his challenge, I decided my program was too simple and needed to be updated with better written functions. The functions in my original Tic Tac Toe program were hardcoded in some ways and needed to be more abstracted. Functions need to do just one thing and need to be able to accomodate potential changes in the future without re-writing the function.</description>
+      <description>Shortly after writing a Tic Tac Toe program in python for one of my programming challenges, I ran across a new Tic Tac Toe programming challenge from Robert Heaton. While looking through his challenge, I decided my program was too simple and needed to be updated with better written functions. The functions in my original Tic Tac Toe program were hardcoded in some ways and needed to be more abstracted.</description>
     </item>
     
     <item>

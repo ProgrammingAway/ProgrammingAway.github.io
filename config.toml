@@ -24,4 +24,8 @@ enableRobotsTXT = true
   background_color_class = "bg-black"
   featured_image = "/images/beach-top.jpg"
   recent_posts_number = 3
+  commentoEnable = true
 
+[[params.ananke_socials]]
+name = "github"
+url = "https://github.com/ProgrammingAway"
