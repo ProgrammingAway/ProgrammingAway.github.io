@@ -1,418 +1,544 @@
-<!doctype html><html lang=en-us>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>Tic Tac Toe Challenge – Version 2 | Programming Away</title>
-<meta name=viewport content="width=device-width,minimum-scale=1">
-<meta name=description content="Shortly after writing a Tic Tac Toe program in python for one of my programming challenges, I ran across a new Tic Tac Toe programming challenge from Robert Heaton. While looking through his challenge, I decided my program was too simple and needed to be updated with better written functions. The functions in my original Tic Tac Toe program were hardcoded in some ways and needed to be more abstracted.">
-<meta name=generator content="Hugo 0.91.2">
-<meta name=ROBOTS content="NOINDEX, NOFOLLOW">
-<link rel=stylesheet href=/ananke/css/main.min.css>
-<meta property="og:title" content="Tic Tac Toe Challenge – Version 2">
-<meta property="og:description" content="Shortly after writing a Tic Tac Toe program in python for one of my programming challenges, I ran across a new Tic Tac Toe programming challenge from Robert Heaton. While looking through his challenge, I decided my program was too simple and needed to be updated with better written functions. The functions in my original Tic Tac Toe program were hardcoded in some ways and needed to be more abstracted.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="http://programmingaway.com/post/tictactoe_v2/"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2022-01-08T16:39:10-06:00">
-<meta property="article:modified_time" content="2022-01-08T16:39:10-06:00">
-<meta itemprop=name content="Tic Tac Toe Challenge – Version 2">
-<meta itemprop=description content="Shortly after writing a Tic Tac Toe program in python for one of my programming challenges, I ran across a new Tic Tac Toe programming challenge from Robert Heaton. While looking through his challenge, I decided my program was too simple and needed to be updated with better written functions. The functions in my original Tic Tac Toe program were hardcoded in some ways and needed to be more abstracted."><meta itemprop=datePublished content="2022-01-08T16:39:10-06:00">
-<meta itemprop=dateModified content="2022-01-08T16:39:10-06:00">
-<meta itemprop=wordCount content="1499">
-<meta itemprop=keywords content="Programming,Python,"><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Tic Tac Toe Challenge – Version 2">
-<meta name=twitter:description content="Shortly after writing a Tic Tac Toe program in python for one of my programming challenges, I ran across a new Tic Tac Toe programming challenge from Robert Heaton. While looking through his challenge, I decided my program was too simple and needed to be updated with better written functions. The functions in my original Tic Tac Toe program were hardcoded in some ways and needed to be more abstracted.">
-</head>
-<body class="ma0 avenir bg-near-white">
-<header class="cover bg-top" style=background-image:url(http://programmingaway.com/images/posts/tic-tac-toe-gcdabc1c51_1920.jpg)>
-<div class="pb3-m pb6-l bg-black-60">
-<nav class="pv3 ph3 ph4-ns" role=navigation>
-<div class="flex-l justify-between items-center center">
-<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
-<img src=/images/Logo/27504_ProgrammingAway_Logo_AC_GR-012.png class="w100 mw5-ns" alt="Programming Away">
-</a>
-<div class="flex-l items-center">
-<ul class="pl0 mr3">
-<li class="list f5 f4-ns fw4 dib pr3">
-<a class="hover-white no-underline white-90" href=/about/ title="About page">
-About
-</a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
-<a class="hover-white no-underline white-90" href=/contact/ title="Contact page">
-Contact
-</a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
-<a class="hover-white no-underline white-90" href=/post/ title="Posts page">
-Posts
-</a>
-</li>
-</ul>
-<div class=ananke-socials>
-<a href=https://github.com/ProgrammingAway target=_blank class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel=noopener aria-label="follow on GitHub——Opens in a new window">
-<span class=icon><svg height="{{ . }}" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Tic Tac Toe Challenge – Version 2 | Programming Away</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Shortly after writing a Tic Tac Toe program in python for one of my programming challenges, I ran across a new Tic Tac Toe programming challenge from Robert Heaton. While looking through his challenge, I decided my program was too simple and needed to be updated with better written functions. The functions in my original Tic Tac Toe program were hardcoded in some ways and needed to be more abstracted.">
+    <meta name="generator" content="Hugo 0.89.4" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Tic Tac Toe Challenge – Version 2" />
+<meta property="og:description" content="Shortly after writing a Tic Tac Toe program in python for one of my programming challenges, I ran across a new Tic Tac Toe programming challenge from Robert Heaton. While looking through his challenge, I decided my program was too simple and needed to be updated with better written functions. The functions in my original Tic Tac Toe program were hardcoded in some ways and needed to be more abstracted." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://programmingaway.com/post/tictactoe_v2/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-01-08T16:39:10-06:00" />
+<meta property="article:modified_time" content="2022-01-08T16:39:10-06:00" />
+
+<meta itemprop="name" content="Tic Tac Toe Challenge – Version 2">
+<meta itemprop="description" content="Shortly after writing a Tic Tac Toe program in python for one of my programming challenges, I ran across a new Tic Tac Toe programming challenge from Robert Heaton. While looking through his challenge, I decided my program was too simple and needed to be updated with better written functions. The functions in my original Tic Tac Toe program were hardcoded in some ways and needed to be more abstracted."><meta itemprop="datePublished" content="2022-01-08T16:39:10-06:00" />
+<meta itemprop="dateModified" content="2022-01-08T16:39:10-06:00" />
+<meta itemprop="wordCount" content="1499">
+<meta itemprop="keywords" content="Programming,Python," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tic Tac Toe Challenge – Version 2"/>
+<meta name="twitter:description" content="Shortly after writing a Tic Tac Toe program in python for one of my programming challenges, I ran across a new Tic Tac Toe programming challenge from Robert Heaton. While looking through his challenge, I decided my program was too simple and needed to be updated with better written functions. The functions in my original Tic Tac Toe program were hardcoded in some ways and needed to be more abstracted."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('http://programmingaway.com/images/posts/tic-tac-toe-gcdabc1c51_1920.jpg');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        <img src="/images/Logo/27504_ProgrammingAway_Logo_AC_GR-012.png" class="w100 mw5-ns" alt="Programming Away" />
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/post/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+    <a href="https://github.com/ProgrammingAway" target="_blank" class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel="noopener" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg {{ with .size }} height="{{ . }}" {{ end }} style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
 </span>
-<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
 </span></a>
-<a href=https://www.linkedin.com/in/brian-ladner-a8902bb/ target=_blank class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel=noopener aria-label="follow on LinkedIn——Opens in a new window">
-<span class=icon><svg height="{{ . }}" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
+  
+    <a href="https://www.linkedin.com/in/brian-ladner-a8902bb/" target="_blank" class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg {{ with .size }} height="{{ . }}" {{ end }} style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }};"/>
+</svg>
 </span>
-<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
 </span></a>
+  
 </div>
-</div>
-</div>
+    </div>
+  </div>
 </nav>
-<div class="tc-l pv6 ph3 ph4-ns">
-</div>
-</div>
-</header>
-<main class=pb7 role=main>
-<article class="flex-l flex-wrap justify-between mw8 center ph3">
-<header class="mt4 w-100">
-<aside class="instapaper_ignoref b helvetica tracked">
-POSTS
-</aside>
-<div id=sharing class="mt3 ananke-socials">
-<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://programmingaway.com/post/tictactoe_v2/&title=Tic%20Tac%20Toe%20Challenge%20%e2%80%93%20Version%202" class="ananke-social-link linkedin no-underline" aria-label="share on LinkedIn">
-<span class=icon><svg height="{{ . }}" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+      
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://programmingaway.com/post/tictactoe_v2/&amp;title=Tic%20Tac%20Toe%20Challenge%20%e2%80%93%20Version%202" class="ananke-social-link linkedin no-underline" aria-label="share on LinkedIn">
+        
+        <span class="icon"> <svg {{ with .size }} height="{{ . }}" {{ end }} style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }};"/>
+</svg>
 </span>
-</a>
-</div>
-<h1 class="f1 athelas mt3 mb1">Tic Tac Toe Challenge – Version 2</h1>
-<p class=tracked>
-By <strong>
-Brian Ladner
-</strong>
-</p>
-<time class="f6 mv4 dib tracked" datetime=2022-01-08T16:39:10-06:00>January 8, 2022</time>
-</header>
-<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><figure><img src=/images/posts/tic-tac-toe-gcdabc1c51_1920.jpg>
+        
+      </a>
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Tic Tac Toe Challenge – Version 2</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Brian Ladner
+          
+          </strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2022-01-08T16:39:10-06:00">January 8, 2022</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><figure><img src="/images/posts/tic-tac-toe-gcdabc1c51_1920.jpg"/>
 </figure>
-<p>Shortly after writing a <a href=https://programmingaway.com/post/tictactoe_v1>Tic Tac Toe program</a> in python for one of my programming challenges, I ran across a new Tic Tac Toe programming challenge from <a href=https://robertheaton.com/2018/10/09/programming-projects-for-advanced-beginners-3-a/>Robert Heaton</a>. While looking through his challenge, I decided my program was too simple and needed to be updated with better written functions. The functions in my original Tic Tac Toe program were hardcoded in some ways and needed to be more abstracted. Functions need to do just one thing and need to be able to accomodate potential changes in the future without re-writing the function.</p>
+
+<p>Shortly after writing a <a href="https://programmingaway.com/post/tictactoe_v1">Tic Tac Toe program</a> in python for one of my programming challenges, I ran across a new Tic Tac Toe programming challenge from <a href="https://robertheaton.com/2018/10/09/programming-projects-for-advanced-beginners-3-a/">Robert Heaton</a>. While looking through his challenge, I decided my program was too simple and needed to be updated with better written functions. The functions in my original Tic Tac Toe program were hardcoded in some ways and needed to be more abstracted. Functions need to do just one thing and need to be able to accomodate potential changes in the future without re-writing the function.</p>
 <p>So the first thing I did was make the game board size a variable that can be controlled by the user. Now we aren’t stuck with a 3×3 board, however, this would require us to re-write most of the functions since they were hardcoded to use a 3×3 board. The first thing I needed to do is to create a initializeBoard() function that created a 2 dimensional array based off the boardSize variable.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>initializeBoard</span>(boardSize):
-    <span style=color:#75715e># Creates a 2 dimentional martix of boardSize</span>
-    board <span style=color:#f92672>=</span> []
-    <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> range(boardSize):
-        column <span style=color:#f92672>=</span> []
-        <span style=color:#66d9ef>for</span> y <span style=color:#f92672>in</span> range(boardSize):
-            column<span style=color:#f92672>.</span>append(<span style=color:#66d9ef>None</span>)
-        board<span style=color:#f92672>.</span>append(column)
-    <span style=color:#66d9ef>return</span> board</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initializeBoard</span>(boardSize):
+    <span style="color:#75715e"># Creates a 2 dimentional martix of boardSize</span>
+    board <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(boardSize):
+        column <span style="color:#f92672">=</span> []
+        <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(boardSize):
+            column<span style="color:#f92672">.</span>append(<span style="color:#66d9ef">None</span>)
+        board<span style="color:#f92672">.</span>append(column)
+    <span style="color:#66d9ef">return</span> board</code></pre></div>
 <p>The next thing I did was update the printBoard() function to use this new board:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>printBoard</span>(board):
-    <span style=color:#75715e># Prints the current state of the board</span>
-    rowIndex <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-    positionIndex <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">printBoard</span>(board):
+    <span style="color:#75715e"># Prints the current state of the board</span>
+    rowIndex <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    positionIndex <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
     print()
-    <span style=color:#66d9ef>for</span> row <span style=color:#f92672>in</span> board:
-        boardRow1 <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34; | &#34;</span>
-        boardRow2 <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;---&#34;</span>
-        <span style=color:#66d9ef>for</span> col <span style=color:#f92672>in</span> row:
-            <span style=color:#66d9ef>if</span> col <span style=color:#f92672>is</span> <span style=color:#66d9ef>None</span>:
-                <span style=color:#66d9ef>if</span> positionIndex <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>10</span>:
-                    boardRow1 <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34; &#34;</span>
-                <span style=color:#66d9ef>if</span> positionIndex <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>100</span>:
-                    boardRow1 <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34; &#34;</span>
-                boardRow1 <span style=color:#f92672>+=</span> str(positionIndex)
-                boardRow2 <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34;---&#34;</span>
-            <span style=color:#66d9ef>else</span>:
-                boardRow1 <span style=color:#f92672>=</span> boardRow1 <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; &#34;</span> <span style=color:#f92672>+</span> col <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; &#34;</span>
-                boardRow2 <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34;---&#34;</span>
-            boardRow1 <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34; | &#34;</span>
-            boardRow2 <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34;---&#34;</span>
-            positionIndex <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
-        <span style=color:#66d9ef>if</span> rowIndex <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+    <span style="color:#66d9ef">for</span> row <span style="color:#f92672">in</span> board:
+        boardRow1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; | &#34;</span>
+        boardRow2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;---&#34;</span>
+        <span style="color:#66d9ef">for</span> col <span style="color:#f92672">in</span> row:
+            <span style="color:#66d9ef">if</span> col <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+                <span style="color:#66d9ef">if</span> positionIndex <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>:
+                    boardRow1 <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34; &#34;</span>
+                <span style="color:#66d9ef">if</span> positionIndex <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">100</span>:
+                    boardRow1 <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34; &#34;</span>
+                boardRow1 <span style="color:#f92672">+=</span> str(positionIndex)
+                boardRow2 <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;---&#34;</span>
+            <span style="color:#66d9ef">else</span>:
+                boardRow1 <span style="color:#f92672">=</span> boardRow1 <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> col <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span>
+                boardRow2 <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;---&#34;</span>
+            boardRow1 <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34; | &#34;</span>
+            boardRow2 <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;---&#34;</span>
+            positionIndex <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+        <span style="color:#66d9ef">if</span> rowIndex <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
             print(boardRow2)
         print(boardRow1)
         print(boardRow2)
-        rowIndex <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+        rowIndex <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
     print()</code></pre></div>
 <p>I will have to put some practical limit on the board size to keep the game managable, but I wanted the printBoard() function to be able to handle a large size board. I added conditionals that tested if there are more than 10 or 100 positions on the board so I can add proper spacing and everything would line up. But I did think testing anything bigger than that would make the board too big and make the game too hard to play. However, I may be able to accomplish this by using some print formatting. I will look into that.</p>
 <p>I could have used the same method of checking for a draw as my old program, but I decided to give it it’s dedicated function and actually test for any empty spaces on the board. Hopefully this is more robust.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>checkForDraw</span>(board):
-    <span style=color:#75715e># Checks to see if there are any empty spaces on the board</span>
-    <span style=color:#75715e># If not, it is a draw</span>
-    <span style=color:#66d9ef>for</span> row <span style=color:#f92672>in</span> board:
-        <span style=color:#66d9ef>for</span> col <span style=color:#f92672>in</span> row:
-            <span style=color:#66d9ef>if</span> col <span style=color:#f92672>is</span> <span style=color:#66d9ef>None</span>:
-                <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
-    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">checkForDraw</span>(board):
+    <span style="color:#75715e"># Checks to see if there are any empty spaces on the board</span>
+    <span style="color:#75715e"># If not, it is a draw</span>
+    <span style="color:#66d9ef">for</span> row <span style="color:#f92672">in</span> board:
+        <span style="color:#66d9ef">for</span> col <span style="color:#f92672">in</span> row:
+            <span style="color:#66d9ef">if</span> col <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span></code></pre></div>
 <p>Next I will update the checkForWin() function. Since the size of the board is parameterized, I cannot store a list of all winning combinations before hand. I will need to create a list dynamically based off the size chosen by the user. In order to not calculate this every time I check for a win, I will call a function after the board size is chosen and send the resulting list to the checkForWin() function. So first, this is the function to create all possible winning combinations:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>winningSequences</span>(boardSize):
-    <span style=color:#75715e># Return all the sequences that can win the game</span>
-    colSequences <span style=color:#f92672>=</span> []
-    rowSequences <span style=color:#f92672>=</span> []
-    <span style=color:#66d9ef>for</span> a <span style=color:#f92672>in</span> range(boardSize):
-        col <span style=color:#f92672>=</span> []
-        row <span style=color:#f92672>=</span> []
-        <span style=color:#66d9ef>for</span> b <span style=color:#f92672>in</span> range(boardSize):
-            col<span style=color:#f92672>.</span>append((a, b))
-            row<span style=color:#f92672>.</span>append((b, a))
-        colSequences<span style=color:#f92672>.</span>append(col)
-        rowSequences<span style=color:#f92672>.</span>append(row)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">winningSequences</span>(boardSize):
+    <span style="color:#75715e"># Return all the sequences that can win the game</span>
+    colSequences <span style="color:#f92672">=</span> []
+    rowSequences <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">for</span> a <span style="color:#f92672">in</span> range(boardSize):
+        col <span style="color:#f92672">=</span> []
+        row <span style="color:#f92672">=</span> []
+        <span style="color:#66d9ef">for</span> b <span style="color:#f92672">in</span> range(boardSize):
+            col<span style="color:#f92672">.</span>append((a, b))
+            row<span style="color:#f92672">.</span>append((b, a))
+        colSequences<span style="color:#f92672">.</span>append(col)
+        rowSequences<span style="color:#f92672">.</span>append(row)
 
-    diagSequences <span style=color:#f92672>=</span> []
-    diag1 <span style=color:#f92672>=</span> []
-    diag2 <span style=color:#f92672>=</span> []
-    <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> range(boardSize):
-        diag1<span style=color:#f92672>.</span>append((x, x))
-        diag2<span style=color:#f92672>.</span>append((x, boardSize<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span><span style=color:#f92672>-</span>x))
-    diagSequences<span style=color:#f92672>.</span>append(diag1)
-    diagSequences<span style=color:#f92672>.</span>append(diag2)
+    diagSequences <span style="color:#f92672">=</span> []
+    diag1 <span style="color:#f92672">=</span> []
+    diag2 <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(boardSize):
+        diag1<span style="color:#f92672">.</span>append((x, x))
+        diag2<span style="color:#f92672">.</span>append((x, boardSize<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>x))
+    diagSequences<span style="color:#f92672">.</span>append(diag1)
+    diagSequences<span style="color:#f92672">.</span>append(diag2)
 
-    <span style=color:#66d9ef>return</span> colSequences <span style=color:#f92672>+</span> rowSequences <span style=color:#f92672>+</span> diagSequences</code></pre></div>
+    <span style="color:#66d9ef">return</span> colSequences <span style="color:#f92672">+</span> rowSequences <span style="color:#f92672">+</span> diagSequences</code></pre></div>
 <p>Now this is the resulting checkForWin() function:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>checkForWin</span>(board, winningSequencesList):
-    <span style=color:#75715e># Check if either player has won the game</span>
-    <span style=color:#66d9ef>for</span> seq <span style=color:#f92672>in</span> winningSequencesList:
-        boardValues <span style=color:#f92672>=</span> []
-        <span style=color:#66d9ef>for</span> (x, y) <span style=color:#f92672>in</span> seq:
-            boardValues<span style=color:#f92672>.</span>append(board[x][y])
-        <span style=color:#66d9ef>if</span> len(set(boardValues)) <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>and</span> boardValues[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>is</span> <span style=color:#f92672>not</span> <span style=color:#66d9ef>None</span>:
-            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
-    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">checkForWin</span>(board, winningSequencesList):
+    <span style="color:#75715e"># Check if either player has won the game</span>
+    <span style="color:#66d9ef">for</span> seq <span style="color:#f92672">in</span> winningSequencesList:
+        boardValues <span style="color:#f92672">=</span> []
+        <span style="color:#66d9ef">for</span> (x, y) <span style="color:#f92672">in</span> seq:
+            boardValues<span style="color:#f92672">.</span>append(board[x][y])
+        <span style="color:#66d9ef">if</span> len(set(boardValues)) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">and</span> boardValues[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span></code></pre></div>
 <p>Next I remove the section of the playGame() function that gets the move from the user and add it into it’s own function. I do this so I can swap out this function for an AI function at some point in the future. This function is as follows:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>get_move</span>(board, player):
-    boardSize <span style=color:#f92672>=</span> len(board)
-    boardRange <span style=color:#f92672>=</span> boardSize <span style=color:#f92672>*</span> boardSize
-    <span style=color:#66d9ef>while</span> <span style=color:#66d9ef>True</span>:
-        answer <span style=color:#f92672>=</span> input(<span style=color:#e6db74>&#34;Please pick an unused space between 0 and &#34;</span> <span style=color:#f92672>+</span> str(boardRange<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;: &#34;</span>)
-        <span style=color:#66d9ef>if</span> answer<span style=color:#f92672>.</span>isdigit():
-            move <span style=color:#f92672>=</span> int(answer)
-            row <span style=color:#f92672>=</span> int(move <span style=color:#f92672>/</span> boardSize)
-            col <span style=color:#f92672>=</span> int(move <span style=color:#f92672>%</span> boardSize)
-            <span style=color:#66d9ef>if</span> move <span style=color:#f92672>in</span> range(boardRange) <span style=color:#f92672>and</span> board[row][col] <span style=color:#f92672>==</span> <span style=color:#66d9ef>None</span>:
-                <span style=color:#66d9ef>break</span>
-            <span style=color:#66d9ef>elif</span> move <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> range(boardRange):
-                print(<span style=color:#e6db74>&#34;Choose a valid space.&#34;</span>)
-            <span style=color:#66d9ef>else</span>:
-                print(<span style=color:#e6db74>&#34;Choose an unused space.&#34;</span>)
-        <span style=color:#66d9ef>else</span>:
-            print(<span style=color:#e6db74>&#34;Please enter a valid number.&#34;</span>)
-    <span style=color:#66d9ef>return</span> (row, col)</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_move</span>(board, player):
+    boardSize <span style="color:#f92672">=</span> len(board)
+    boardRange <span style="color:#f92672">=</span> boardSize <span style="color:#f92672">*</span> boardSize
+    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+        answer <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Please pick an unused space between 0 and &#34;</span> <span style="color:#f92672">+</span> str(boardRange<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;: &#34;</span>)
+        <span style="color:#66d9ef">if</span> answer<span style="color:#f92672">.</span>isdigit():
+            move <span style="color:#f92672">=</span> int(answer)
+            row <span style="color:#f92672">=</span> int(move <span style="color:#f92672">/</span> boardSize)
+            col <span style="color:#f92672">=</span> int(move <span style="color:#f92672">%</span> boardSize)
+            <span style="color:#66d9ef">if</span> move <span style="color:#f92672">in</span> range(boardRange) <span style="color:#f92672">and</span> board[row][col] <span style="color:#f92672">==</span> <span style="color:#66d9ef">None</span>:
+                <span style="color:#66d9ef">break</span>
+            <span style="color:#66d9ef">elif</span> move <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> range(boardRange):
+                print(<span style="color:#e6db74">&#34;Choose a valid space.&#34;</span>)
+            <span style="color:#66d9ef">else</span>:
+                print(<span style="color:#e6db74">&#34;Choose an unused space.&#34;</span>)
+        <span style="color:#66d9ef">else</span>:
+            print(<span style="color:#e6db74">&#34;Please enter a valid number.&#34;</span>)
+    <span style="color:#66d9ef">return</span> (row, col)</code></pre></div>
 <p>After creating the getMove() function, that leaves the playGame() function. Here is what is needed for that function:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>playGame</span>(board, winningSequencesList):
-    <span style=color:#75715e># while there is not a win or draw, then ask the player for the next move</span>
-    win <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-    draw <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-    count <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-    <span style=color:#66d9ef>while</span> win <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>and</span> draw <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:  <span style=color:#75715e># =1 for win, =2 for draw, =0 to continue play</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">playGame</span>(board, winningSequencesList):
+    <span style="color:#75715e"># while there is not a win or draw, then ask the player for the next move</span>
+    win <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    draw <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">while</span> win <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> draw <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:  <span style="color:#75715e"># =1 for win, =2 for draw, =0 to continue play</span>
         printBoard(board)
-        <span style=color:#66d9ef>if</span> count <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:  <span style=color:#75715e># Even count is player X</span>
-            player <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;X&#34;</span>
-        <span style=color:#66d9ef>else</span>:  <span style=color:#75715e># Odd count is player O</span>
-            player <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;O&#34;</span>
-        move <span style=color:#f92672>=</span> get_move(board, player)
-        board[move[<span style=color:#ae81ff>0</span>]][move[<span style=color:#ae81ff>1</span>]] <span style=color:#f92672>=</span> player
-        draw <span style=color:#f92672>=</span> checkForDraw(board)
-        win <span style=color:#f92672>=</span> checkForWin(board, winningSequencesList)
-        count <span style=color:#f92672>=</span> count <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
+        <span style="color:#66d9ef">if</span> count <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:  <span style="color:#75715e"># Even count is player X</span>
+            player <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;X&#34;</span>
+        <span style="color:#66d9ef">else</span>:  <span style="color:#75715e"># Odd count is player O</span>
+            player <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;O&#34;</span>
+        move <span style="color:#f92672">=</span> get_move(board, player)
+        board[move[<span style="color:#ae81ff">0</span>]][move[<span style="color:#ae81ff">1</span>]] <span style="color:#f92672">=</span> player
+        draw <span style="color:#f92672">=</span> checkForDraw(board)
+        win <span style="color:#f92672">=</span> checkForWin(board, winningSequencesList)
+        count <span style="color:#f92672">=</span> count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
     printBoard(board)
-    <span style=color:#66d9ef>if</span> draw:
-        print(<span style=color:#e6db74>&#34;The game is a draw!&#34;</span>)
-    <span style=color:#66d9ef>if</span> win:
-        print(<span style=color:#e6db74>&#34;Player &#34;</span> <span style=color:#f92672>+</span> player <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; won!&#34;</span>)</code></pre></div>
+    <span style="color:#66d9ef">if</span> draw:
+        print(<span style="color:#e6db74">&#34;The game is a draw!&#34;</span>)
+    <span style="color:#66d9ef">if</span> win:
+        print(<span style="color:#e6db74">&#34;Player &#34;</span> <span style="color:#f92672">+</span> player <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; won!&#34;</span>)</code></pre></div>
 <p>So finally, here is the final version of the code:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Tic Tac Toe V2</span>
-<span style=color:#75715e># Another attempt at a Tic Tac Toe program challenge</span>
-<span style=color:#75715e># (from https://robertheaton.com/2018/10/09/programming-projects-for-advanced-beginners-3-a/)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Tic Tac Toe V2</span>
+<span style="color:#75715e"># Another attempt at a Tic Tac Toe program challenge</span>
+<span style="color:#75715e"># (from https://robertheaton.com/2018/10/09/programming-projects-for-advanced-beginners-3-a/)</span>
 
 
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>initializeBoard</span>(boardSize):
-    <span style=color:#75715e># Creates a 2 dimentional martix of boardSize</span>
-    board <span style=color:#f92672>=</span> []
-    <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> range(boardSize):
-        column <span style=color:#f92672>=</span> []
-        <span style=color:#66d9ef>for</span> y <span style=color:#f92672>in</span> range(boardSize):
-            column<span style=color:#f92672>.</span>append(<span style=color:#66d9ef>None</span>)
-        board<span style=color:#f92672>.</span>append(column)
-    <span style=color:#66d9ef>return</span> board
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initializeBoard</span>(boardSize):
+    <span style="color:#75715e"># Creates a 2 dimentional martix of boardSize</span>
+    board <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(boardSize):
+        column <span style="color:#f92672">=</span> []
+        <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(boardSize):
+            column<span style="color:#f92672">.</span>append(<span style="color:#66d9ef">None</span>)
+        board<span style="color:#f92672">.</span>append(column)
+    <span style="color:#66d9ef">return</span> board
 
 
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>printBoard</span>(board):
-    <span style=color:#75715e># Prints the current state of the board</span>
-    rowIndex <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-    positionIndex <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">printBoard</span>(board):
+    <span style="color:#75715e"># Prints the current state of the board</span>
+    rowIndex <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    positionIndex <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
     print()
-    <span style=color:#66d9ef>for</span> row <span style=color:#f92672>in</span> board:
-        boardRow1 <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34; | &#34;</span>
-        boardRow2 <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;---&#34;</span>
-        <span style=color:#66d9ef>for</span> col <span style=color:#f92672>in</span> row:
-            <span style=color:#66d9ef>if</span> col <span style=color:#f92672>is</span> <span style=color:#66d9ef>None</span>:
-                <span style=color:#66d9ef>if</span> positionIndex <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>10</span>:
-                    boardRow1 <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34; &#34;</span>
-                <span style=color:#66d9ef>if</span> positionIndex <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>100</span>:
-                    boardRow1 <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34; &#34;</span>
-                boardRow1 <span style=color:#f92672>+=</span> str(positionIndex)
-                boardRow2 <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34;---&#34;</span>
-            <span style=color:#66d9ef>else</span>:
-                boardRow1 <span style=color:#f92672>=</span> boardRow1 <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; &#34;</span> <span style=color:#f92672>+</span> col <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; &#34;</span>
-                boardRow2 <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34;---&#34;</span>
-            boardRow1 <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34; | &#34;</span>
-            boardRow2 <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34;---&#34;</span>
-            positionIndex <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
-        <span style=color:#66d9ef>if</span> rowIndex <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+    <span style="color:#66d9ef">for</span> row <span style="color:#f92672">in</span> board:
+        boardRow1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; | &#34;</span>
+        boardRow2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;---&#34;</span>
+        <span style="color:#66d9ef">for</span> col <span style="color:#f92672">in</span> row:
+            <span style="color:#66d9ef">if</span> col <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+                <span style="color:#66d9ef">if</span> positionIndex <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>:
+                    boardRow1 <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34; &#34;</span>
+                <span style="color:#66d9ef">if</span> positionIndex <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">100</span>:
+                    boardRow1 <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34; &#34;</span>
+                boardRow1 <span style="color:#f92672">+=</span> str(positionIndex)
+                boardRow2 <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;---&#34;</span>
+            <span style="color:#66d9ef">else</span>:
+                boardRow1 <span style="color:#f92672">=</span> boardRow1 <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> col <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span>
+                boardRow2 <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;---&#34;</span>
+            boardRow1 <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34; | &#34;</span>
+            boardRow2 <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;---&#34;</span>
+            positionIndex <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+        <span style="color:#66d9ef">if</span> rowIndex <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
             print(boardRow2)
         print(boardRow1)
         print(boardRow2)
-        rowIndex <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+        rowIndex <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
     print()
 
 
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>checkForWin</span>(board, winningSequencesList):
-    <span style=color:#75715e># Check if either player has won the game</span>
-    <span style=color:#66d9ef>for</span> seq <span style=color:#f92672>in</span> winningSequencesList:
-        boardValues <span style=color:#f92672>=</span> []
-        <span style=color:#66d9ef>for</span> (x, y) <span style=color:#f92672>in</span> seq:
-            boardValues<span style=color:#f92672>.</span>append(board[x][y])
-        <span style=color:#66d9ef>if</span> len(set(boardValues)) <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>and</span> boardValues[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>is</span> <span style=color:#f92672>not</span> <span style=color:#66d9ef>None</span>:
-            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
-    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">checkForWin</span>(board, winningSequencesList):
+    <span style="color:#75715e"># Check if either player has won the game</span>
+    <span style="color:#66d9ef">for</span> seq <span style="color:#f92672">in</span> winningSequencesList:
+        boardValues <span style="color:#f92672">=</span> []
+        <span style="color:#66d9ef">for</span> (x, y) <span style="color:#f92672">in</span> seq:
+            boardValues<span style="color:#f92672">.</span>append(board[x][y])
+        <span style="color:#66d9ef">if</span> len(set(boardValues)) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">and</span> boardValues[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
 
 
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>winningSequences</span>(boardSize):
-    <span style=color:#75715e># Return all the sequences that can win the game</span>
-    colSequences <span style=color:#f92672>=</span> []
-    rowSequences <span style=color:#f92672>=</span> []
-    <span style=color:#66d9ef>for</span> a <span style=color:#f92672>in</span> range(boardSize):
-        col <span style=color:#f92672>=</span> []
-        row <span style=color:#f92672>=</span> []
-        <span style=color:#66d9ef>for</span> b <span style=color:#f92672>in</span> range(boardSize):
-            col<span style=color:#f92672>.</span>append((a, b))
-            row<span style=color:#f92672>.</span>append((b, a))
-        colSequences<span style=color:#f92672>.</span>append(col)
-        rowSequences<span style=color:#f92672>.</span>append(row)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">winningSequences</span>(boardSize):
+    <span style="color:#75715e"># Return all the sequences that can win the game</span>
+    colSequences <span style="color:#f92672">=</span> []
+    rowSequences <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">for</span> a <span style="color:#f92672">in</span> range(boardSize):
+        col <span style="color:#f92672">=</span> []
+        row <span style="color:#f92672">=</span> []
+        <span style="color:#66d9ef">for</span> b <span style="color:#f92672">in</span> range(boardSize):
+            col<span style="color:#f92672">.</span>append((a, b))
+            row<span style="color:#f92672">.</span>append((b, a))
+        colSequences<span style="color:#f92672">.</span>append(col)
+        rowSequences<span style="color:#f92672">.</span>append(row)
 
-    diagSequences <span style=color:#f92672>=</span> []
-    diag1 <span style=color:#f92672>=</span> []
-    diag2 <span style=color:#f92672>=</span> []
-    <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> range(boardSize):
-        diag1<span style=color:#f92672>.</span>append((x, x))
-        diag2<span style=color:#f92672>.</span>append((x, boardSize<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span><span style=color:#f92672>-</span>x))
-    diagSequences<span style=color:#f92672>.</span>append(diag1)
-    diagSequences<span style=color:#f92672>.</span>append(diag2)
+    diagSequences <span style="color:#f92672">=</span> []
+    diag1 <span style="color:#f92672">=</span> []
+    diag2 <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(boardSize):
+        diag1<span style="color:#f92672">.</span>append((x, x))
+        diag2<span style="color:#f92672">.</span>append((x, boardSize<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>x))
+    diagSequences<span style="color:#f92672">.</span>append(diag1)
+    diagSequences<span style="color:#f92672">.</span>append(diag2)
 
-    <span style=color:#66d9ef>return</span> colSequences <span style=color:#f92672>+</span> rowSequences <span style=color:#f92672>+</span> diagSequences
-
-
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>checkForDraw</span>(board):
-    <span style=color:#75715e># Checks to see if there are any empty spaces on the board</span>
-    <span style=color:#75715e># If not, it is a draw</span>
-    <span style=color:#66d9ef>for</span> row <span style=color:#f92672>in</span> board:
-        <span style=color:#66d9ef>for</span> col <span style=color:#f92672>in</span> row:
-            <span style=color:#66d9ef>if</span> col <span style=color:#f92672>is</span> <span style=color:#66d9ef>None</span>:
-                <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
-    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
+    <span style="color:#66d9ef">return</span> colSequences <span style="color:#f92672">+</span> rowSequences <span style="color:#f92672">+</span> diagSequences
 
 
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>get_move</span>(board, player):
-    boardSize <span style=color:#f92672>=</span> len(board)
-    boardRange <span style=color:#f92672>=</span> boardSize <span style=color:#f92672>*</span> boardSize
-    <span style=color:#66d9ef>while</span> <span style=color:#66d9ef>True</span>:
-        answer <span style=color:#f92672>=</span> input(<span style=color:#e6db74>&#34;Please pick an unused space between 0 and &#34;</span> <span style=color:#f92672>+</span> str(boardRange<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;: &#34;</span>)
-        <span style=color:#66d9ef>if</span> answer<span style=color:#f92672>.</span>isdigit():
-            move <span style=color:#f92672>=</span> int(answer)
-            row <span style=color:#f92672>=</span> int(move <span style=color:#f92672>/</span> boardSize)
-            col <span style=color:#f92672>=</span> int(move <span style=color:#f92672>%</span> boardSize)
-            <span style=color:#66d9ef>if</span> move <span style=color:#f92672>in</span> range(boardRange) <span style=color:#f92672>and</span> board[row][col] <span style=color:#f92672>==</span> <span style=color:#66d9ef>None</span>:
-                <span style=color:#66d9ef>break</span>
-            <span style=color:#66d9ef>elif</span> move <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> range(boardRange):
-                print(<span style=color:#e6db74>&#34;Choose a valid space.&#34;</span>)
-            <span style=color:#66d9ef>else</span>:
-                print(<span style=color:#e6db74>&#34;Choose an unused space.&#34;</span>)
-        <span style=color:#66d9ef>else</span>:
-            print(<span style=color:#e6db74>&#34;Please enter a valid number.&#34;</span>)
-    <span style=color:#66d9ef>return</span> (row, col)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">checkForDraw</span>(board):
+    <span style="color:#75715e"># Checks to see if there are any empty spaces on the board</span>
+    <span style="color:#75715e"># If not, it is a draw</span>
+    <span style="color:#66d9ef">for</span> row <span style="color:#f92672">in</span> board:
+        <span style="color:#66d9ef">for</span> col <span style="color:#f92672">in</span> row:
+            <span style="color:#66d9ef">if</span> col <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
 
 
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>playGame</span>(board, winningSequencesList):
-    <span style=color:#75715e># while there is not a win or draw, then ask the player for the next move</span>
-    win <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-    draw <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-    count <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-    <span style=color:#66d9ef>while</span> win <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>and</span> draw <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:  <span style=color:#75715e># =1 for win, =2 for draw, =0 to continue play</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_move</span>(board, player):
+    boardSize <span style="color:#f92672">=</span> len(board)
+    boardRange <span style="color:#f92672">=</span> boardSize <span style="color:#f92672">*</span> boardSize
+    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+        answer <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Please pick an unused space between 0 and &#34;</span> <span style="color:#f92672">+</span> str(boardRange<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;: &#34;</span>)
+        <span style="color:#66d9ef">if</span> answer<span style="color:#f92672">.</span>isdigit():
+            move <span style="color:#f92672">=</span> int(answer)
+            row <span style="color:#f92672">=</span> int(move <span style="color:#f92672">/</span> boardSize)
+            col <span style="color:#f92672">=</span> int(move <span style="color:#f92672">%</span> boardSize)
+            <span style="color:#66d9ef">if</span> move <span style="color:#f92672">in</span> range(boardRange) <span style="color:#f92672">and</span> board[row][col] <span style="color:#f92672">==</span> <span style="color:#66d9ef">None</span>:
+                <span style="color:#66d9ef">break</span>
+            <span style="color:#66d9ef">elif</span> move <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> range(boardRange):
+                print(<span style="color:#e6db74">&#34;Choose a valid space.&#34;</span>)
+            <span style="color:#66d9ef">else</span>:
+                print(<span style="color:#e6db74">&#34;Choose an unused space.&#34;</span>)
+        <span style="color:#66d9ef">else</span>:
+            print(<span style="color:#e6db74">&#34;Please enter a valid number.&#34;</span>)
+    <span style="color:#66d9ef">return</span> (row, col)
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">playGame</span>(board, winningSequencesList):
+    <span style="color:#75715e"># while there is not a win or draw, then ask the player for the next move</span>
+    win <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    draw <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">while</span> win <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> draw <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:  <span style="color:#75715e"># =1 for win, =2 for draw, =0 to continue play</span>
         printBoard(board)
-        <span style=color:#66d9ef>if</span> count <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:  <span style=color:#75715e># Even count is player X</span>
-            player <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;X&#34;</span>
-        <span style=color:#66d9ef>else</span>:  <span style=color:#75715e># Odd count is player O</span>
-            player <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;O&#34;</span>
-        move <span style=color:#f92672>=</span> get_move(board, player)
-        board[move[<span style=color:#ae81ff>0</span>]][move[<span style=color:#ae81ff>1</span>]] <span style=color:#f92672>=</span> player
-        draw <span style=color:#f92672>=</span> checkForDraw(board)
-        win <span style=color:#f92672>=</span> checkForWin(board, winningSequencesList)
-        count <span style=color:#f92672>=</span> count <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
+        <span style="color:#66d9ef">if</span> count <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:  <span style="color:#75715e"># Even count is player X</span>
+            player <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;X&#34;</span>
+        <span style="color:#66d9ef">else</span>:  <span style="color:#75715e"># Odd count is player O</span>
+            player <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;O&#34;</span>
+        move <span style="color:#f92672">=</span> get_move(board, player)
+        board[move[<span style="color:#ae81ff">0</span>]][move[<span style="color:#ae81ff">1</span>]] <span style="color:#f92672">=</span> player
+        draw <span style="color:#f92672">=</span> checkForDraw(board)
+        win <span style="color:#f92672">=</span> checkForWin(board, winningSequencesList)
+        count <span style="color:#f92672">=</span> count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
     printBoard(board)
-    <span style=color:#66d9ef>if</span> draw:
-        print(<span style=color:#e6db74>&#34;The game is a draw!&#34;</span>)
-    <span style=color:#66d9ef>if</span> win:
-        print(<span style=color:#e6db74>&#34;Player &#34;</span> <span style=color:#f92672>+</span> player <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; won!&#34;</span>)
+    <span style="color:#66d9ef">if</span> draw:
+        print(<span style="color:#e6db74">&#34;The game is a draw!&#34;</span>)
+    <span style="color:#66d9ef">if</span> win:
+        print(<span style="color:#e6db74">&#34;Player &#34;</span> <span style="color:#f92672">+</span> player <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; won!&#34;</span>)
 
 
-play <span style=color:#f92672>=</span> input(<span style=color:#e6db74>&#34;Would you like to play Tic Tac Toe? (Y/N) &#34;</span>)
+play <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Would you like to play Tic Tac Toe? (Y/N) &#34;</span>)
 
-<span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#34;y&#34;</span> <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> play<span style=color:#f92672>.</span>lower():
-    print(<span style=color:#e6db74>&#34;Ok, bye!&#34;</span>)
-    exit(<span style=color:#ae81ff>1</span>)
+<span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;y&#34;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> play<span style="color:#f92672">.</span>lower():
+    print(<span style="color:#e6db74">&#34;Ok, bye!&#34;</span>)
+    exit(<span style="color:#ae81ff">1</span>)
 
-<span style=color:#66d9ef>while</span> <span style=color:#e6db74>&#34;y&#34;</span> <span style=color:#f92672>in</span> play<span style=color:#f92672>.</span>lower():
-    boardSize <span style=color:#f92672>=</span> int(input(<span style=color:#e6db74>&#34;What size board do you want to play with? &#34;</span>))
-    board <span style=color:#f92672>=</span> initializeBoard(boardSize)
-    winningSequencesList <span style=color:#f92672>=</span> winningSequences(boardSize)
+<span style="color:#66d9ef">while</span> <span style="color:#e6db74">&#34;y&#34;</span> <span style="color:#f92672">in</span> play<span style="color:#f92672">.</span>lower():
+    boardSize <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#34;What size board do you want to play with? &#34;</span>))
+    board <span style="color:#f92672">=</span> initializeBoard(boardSize)
+    winningSequencesList <span style="color:#f92672">=</span> winningSequences(boardSize)
     playGame(board, winningSequencesList)
-    play <span style=color:#f92672>=</span> input(<span style=color:#e6db74>&#34;Would you like to play again? (Y/N) &#34;</span>)
+    play <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Would you like to play again? (Y/N) &#34;</span>)
 
-print(<span style=color:#e6db74>&#34;Thanks for playing&#34;</span>)</code></pre></div>
+print(<span style="color:#e6db74">&#34;Thanks for playing&#34;</span>)</code></pre></div>
 <p>So that is how I improved on my solution to the Tic Tac Toe programming challenge in Python. Let me know if you solved it in a different way in the comments below.</p>
 <p>Brian</p>
-<ul class=pa0>
-<li class=list>
-<a href=/tags/programming class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Programming</a>
-</li>
-<li class=list>
-<a href=/tags/python class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Python</a>
-</li>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/programming" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Programming</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/python" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Python</a>
+   </li>
+  
 </ul>
 <div class="mt6 instapaper_ignoref">
-<div id=commento></div>
-<script defer src=https://cdn.commento.io/js/commento.js></script>
+      
+      <div id="commento"></div>
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/post/tictactoe_v1/">Tic Tac Toe Challenge – Version 1</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/garage_door/">Garage Door Controller</a>
+        </li>
+	    
+    </ul>
 </div>
-</div>
-<aside class="w-30-l mt6-l">
-<div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-<p class="f5 b mb3">Related</p>
-<ul class="pa0 list">
-<li class=mb2>
-<a href=/post/tictactoe_v1/>Tic Tac Toe Challenge – Version 1</a>
-</li>
-<li class=mb2>
-<a href=/post/garage_door/>Garage Door Controller</a>
-</li>
-</ul>
-</div>
+
 </aside>
-</article>
-</main>
-<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
-<div class="flex justify-between">
-<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=http://programmingaway.com/>
-&copy; Programming Away 2022
-</a>
-<div>
-<div class=ananke-socials>
-<a href=https://github.com/ProgrammingAway target=_blank class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel=noopener aria-label="follow on GitHub——Opens in a new window">
-<span class=icon><svg height="{{ . }}" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://programmingaway.com/" >
+    &copy;  Programming Away 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    <a href="https://github.com/ProgrammingAway" target="_blank" class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel="noopener" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg {{ with .size }} height="{{ . }}" {{ end }} style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
 </span>
-<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
 </span></a>
-<a href=https://www.linkedin.com/in/brian-ladner-a8902bb/ target=_blank class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel=noopener aria-label="follow on LinkedIn——Opens in a new window">
-<span class=icon><svg height="{{ . }}" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
+  
+    <a href="https://www.linkedin.com/in/brian-ladner-a8902bb/" target="_blank" class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg {{ with .size }} height="{{ . }}" {{ end }} style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }};"/>
+</svg>
 </span>
-<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
 </span></a>
+  
 </div></div>
-</div>
+  </div>
 </footer>
-</body>
+
+  </body>
 </html>

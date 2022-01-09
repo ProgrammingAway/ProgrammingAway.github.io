@@ -1,156 +1,250 @@
-<!doctype html><html lang=en-us>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>Tic Tac Toe Challenge – Version 1 | Programming Away</title>
-<meta name=viewport content="width=device-width,minimum-scale=1">
-<meta name=description content="In order to get better at programming, I decided to find programming challenges online and track how I solve them here. After a quick search on Duck Duck Go, I found a set of challenges at Ryan’s Tutorials. The first on the list is a Tic Tac Toe game which states:
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Tic Tac Toe Challenge – Version 1 | Programming Away</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="In order to get better at programming, I decided to find programming challenges online and track how I solve them here. After a quick search on Duck Duck Go, I found a set of challenges at Ryan’s Tutorials. The first on the list is a Tic Tac Toe game which states:
  Build a game of Tic Tac Toe. I would suggest you start off building a two player version then if you want a little extra challenge see if you can build a version where you get to challenge the computer.">
-<meta name=generator content="Hugo 0.91.2">
-<meta name=ROBOTS content="NOINDEX, NOFOLLOW">
-<link rel=stylesheet href=/ananke/css/main.min.css>
-<meta property="og:title" content="Tic Tac Toe Challenge – Version 1">
+    <meta name="generator" content="Hugo 0.89.4" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Tic Tac Toe Challenge – Version 1" />
 <meta property="og:description" content="In order to get better at programming, I decided to find programming challenges online and track how I solve them here. After a quick search on Duck Duck Go, I found a set of challenges at Ryan’s Tutorials. The first on the list is a Tic Tac Toe game which states:
- Build a game of Tic Tac Toe. I would suggest you start off building a two player version then if you want a little extra challenge see if you can build a version where you get to challenge the computer.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="http://programmingaway.com/post/tictactoe_v1/"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2022-01-06T16:39:10-06:00">
-<meta property="article:modified_time" content="2022-01-06T16:39:10-06:00">
-<meta itemprop=name content="Tic Tac Toe Challenge – Version 1">
-<meta itemprop=description content="In order to get better at programming, I decided to find programming challenges online and track how I solve them here. After a quick search on Duck Duck Go, I found a set of challenges at Ryan’s Tutorials. The first on the list is a Tic Tac Toe game which states:
- Build a game of Tic Tac Toe. I would suggest you start off building a two player version then if you want a little extra challenge see if you can build a version where you get to challenge the computer."><meta itemprop=datePublished content="2022-01-06T16:39:10-06:00">
-<meta itemprop=dateModified content="2022-01-06T16:39:10-06:00">
-<meta itemprop=wordCount content="1624">
-<meta itemprop=keywords content="Programming,Python,"><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Tic Tac Toe Challenge – Version 1">
-<meta name=twitter:description content="In order to get better at programming, I decided to find programming challenges online and track how I solve them here. After a quick search on Duck Duck Go, I found a set of challenges at Ryan’s Tutorials. The first on the list is a Tic Tac Toe game which states:
- Build a game of Tic Tac Toe. I would suggest you start off building a two player version then if you want a little extra challenge see if you can build a version where you get to challenge the computer.">
-</head>
-<body class="ma0 avenir bg-near-white">
-<header class="cover bg-top" style=background-image:url(http://programmingaway.com/images/posts/toy-ge3f3268ac_1280.jpg)>
-<div class="pb3-m pb6-l bg-black-60">
-<nav class="pv3 ph3 ph4-ns" role=navigation>
-<div class="flex-l justify-between items-center center">
-<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
-<img src=/images/Logo/27504_ProgrammingAway_Logo_AC_GR-012.png class="w100 mw5-ns" alt="Programming Away">
-</a>
-<div class="flex-l items-center">
-<ul class="pl0 mr3">
-<li class="list f5 f4-ns fw4 dib pr3">
-<a class="hover-white no-underline white-90" href=/about/ title="About page">
-About
-</a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
-<a class="hover-white no-underline white-90" href=/contact/ title="Contact page">
-Contact
-</a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
-<a class="hover-white no-underline white-90" href=/post/ title="Posts page">
-Posts
-</a>
-</li>
-</ul>
-<div class=ananke-socials>
-<a href=https://github.com/ProgrammingAway target=_blank class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel=noopener aria-label="follow on GitHub——Opens in a new window">
-<span class=icon><svg height="{{ . }}" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg>
+ Build a game of Tic Tac Toe. I would suggest you start off building a two player version then if you want a little extra challenge see if you can build a version where you get to challenge the computer." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://programmingaway.com/post/tictactoe_v1/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-01-06T16:39:10-06:00" />
+<meta property="article:modified_time" content="2022-01-06T16:39:10-06:00" />
+
+<meta itemprop="name" content="Tic Tac Toe Challenge – Version 1">
+<meta itemprop="description" content="In order to get better at programming, I decided to find programming challenges online and track how I solve them here. After a quick search on Duck Duck Go, I found a set of challenges at Ryan’s Tutorials. The first on the list is a Tic Tac Toe game which states:
+ Build a game of Tic Tac Toe. I would suggest you start off building a two player version then if you want a little extra challenge see if you can build a version where you get to challenge the computer."><meta itemprop="datePublished" content="2022-01-06T16:39:10-06:00" />
+<meta itemprop="dateModified" content="2022-01-06T16:39:10-06:00" />
+<meta itemprop="wordCount" content="1624">
+<meta itemprop="keywords" content="Programming,Python," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tic Tac Toe Challenge – Version 1"/>
+<meta name="twitter:description" content="In order to get better at programming, I decided to find programming challenges online and track how I solve them here. After a quick search on Duck Duck Go, I found a set of challenges at Ryan’s Tutorials. The first on the list is a Tic Tac Toe game which states:
+ Build a game of Tic Tac Toe. I would suggest you start off building a two player version then if you want a little extra challenge see if you can build a version where you get to challenge the computer."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('http://programmingaway.com/images/posts/toy-ge3f3268ac_1280.jpg');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        <img src="/images/Logo/27504_ProgrammingAway_Logo_AC_GR-012.png" class="w100 mw5-ns" alt="Programming Away" />
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/post/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+    <a href="https://github.com/ProgrammingAway" target="_blank" class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel="noopener" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg {{ with .size }} height="{{ . }}" {{ end }} style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
 </span>
-<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
 </span></a>
-<a href=https://www.linkedin.com/in/brian-ladner-a8902bb/ target=_blank class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel=noopener aria-label="follow on LinkedIn——Opens in a new window">
-<span class=icon><svg height="{{ . }}" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
+  
+    <a href="https://www.linkedin.com/in/brian-ladner-a8902bb/" target="_blank" class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg {{ with .size }} height="{{ . }}" {{ end }} style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }};"/>
+</svg>
 </span>
-<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
 </span></a>
+  
 </div>
-</div>
-</div>
+    </div>
+  </div>
 </nav>
-<div class="tc-l pv6 ph3 ph4-ns">
-</div>
-</div>
-</header>
-<main class=pb7 role=main>
-<article class="flex-l flex-wrap justify-between mw8 center ph3">
-<header class="mt4 w-100">
-<aside class="instapaper_ignoref b helvetica tracked">
-POSTS
-</aside>
-<div id=sharing class="mt3 ananke-socials">
-<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://programmingaway.com/post/tictactoe_v1/&title=Tic%20Tac%20Toe%20Challenge%20%e2%80%93%20Version%201" class="ananke-social-link linkedin no-underline" aria-label="share on LinkedIn">
-<span class=icon><svg height="{{ . }}" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+      
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://programmingaway.com/post/tictactoe_v1/&amp;title=Tic%20Tac%20Toe%20Challenge%20%e2%80%93%20Version%201" class="ananke-social-link linkedin no-underline" aria-label="share on LinkedIn">
+        
+        <span class="icon"> <svg {{ with .size }} height="{{ . }}" {{ end }} style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }};"/>
+</svg>
 </span>
-</a>
-</div>
-<h1 class="f1 athelas mt3 mb1">Tic Tac Toe Challenge – Version 1</h1>
-<p class=tracked>
-By <strong>
-Brian Ladner
-</strong>
-</p>
-<time class="f6 mv4 dib tracked" datetime=2022-01-06T16:39:10-06:00>January 6, 2022</time>
-</header>
-<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><figure><img src=/images/posts/toy-ge3f3268ac_1280.jpg>
+        
+      </a>
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Tic Tac Toe Challenge – Version 1</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Brian Ladner
+          
+          </strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2022-01-06T16:39:10-06:00">January 6, 2022</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><figure><img src="/images/posts/toy-ge3f3268ac_1280.jpg"/>
 </figure>
-<p>In order to get better at programming, I decided to find programming challenges online and track how I solve them here. After a quick search on <a href=https://www.duckduckgo.com/>Duck Duck Go</a>, I found a set of challenges at Ryan’s Tutorials. The first on the list is a Tic Tac Toe game which states:</p>
+
+<p>In order to get better at programming, I decided to find programming challenges online and track how I solve them here. After a quick search on <a href="https://www.duckduckgo.com/">Duck Duck Go</a>, I found a set of challenges at Ryan’s Tutorials. The first on the list is a Tic Tac Toe game which states:</p>
 <blockquote>
 <p>Build a game of Tic Tac Toe. I would suggest you start off building a two player version then if you want a little extra challenge see if you can build a version where you get to challenge the computer.</p>
 </blockquote>
-<p>I decided to do this challenge in Python since that is the language I’ve been using recently, but I do plan on attempting some challenges in different languages. I may also do some challenges in multiple languages. So, if you are looking for the complete python code for this challenge, it is located in the <a href=https://github.com/ProgrammingAway/CodingChalenges/blob/main/TicTacToe/tictactoe.py>github repository</a>. However, I suggest you try it by yourself first, and then come back to look at my solution.</p>
+<p>I decided to do this challenge in Python since that is the language I’ve been using recently, but I do plan on attempting some challenges in different languages. I may also  do some challenges in multiple languages. So, if you are looking for the complete python code for this challenge, it is located in the <a href="https://github.com/ProgrammingAway/CodingChalenges/blob/main/TicTacToe/tictactoe.py">github repository</a>. However, I suggest you try it by yourself first, and then come back to look at my solution.</p>
 <p>I didn’t put too much thought into this challenge when I chose to do it, but I wanted these challenges to be fairly quick and therefore, text based. When I went to start typing code, I realized I would have to put some thought into how to play Tic Tac Toe in text form.</p>
 <p>I first started thinking about the data structure to hold the game board. Originally, I was thinking of creating a two-dimensional array since that would be most similar to an actual Tic Tac Toe game board. However, after a few lines of code I decided it would probably be easier to represent this in just a one-dimensional array. So I created an array for the game board that would originally hold the position number, but eventually will hold the player character when a play is made. I also created a list of arrays that represent winning sequences based on that board.</p>
 <p>Here are the global variables I set up:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Game Board:</span>
-<span style=color:#75715e>#</span>
-<span style=color:#75715e># 0 | 1 | 2</span>
-<span style=color:#75715e># ---------</span>
-<span style=color:#75715e># 3 | 4 | 5</span>
-<span style=color:#75715e># ---------</span>
-<span style=color:#75715e># 6 | 7 | 8</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Game Board:</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># 0 | 1 | 2</span>
+<span style="color:#75715e"># ---------</span>
+<span style="color:#75715e"># 3 | 4 | 5</span>
+<span style="color:#75715e"># ---------</span>
+<span style="color:#75715e"># 6 | 7 | 8</span>
 
-board <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>8</span>]
-winningSequences <span style=color:#f92672>=</span> ([<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>6</span>], [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>7</span>], [<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>8</span>], [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>],
-                    [<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>], [<span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>8</span>], [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>8</span>], [<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>6</span>])</code></pre></div>
+board <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>]
+winningSequences <span style="color:#f92672">=</span> ([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">6</span>], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">7</span>], [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">8</span>], [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>],
+                    [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>], [<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>], [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">8</span>], [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>])</code></pre></div>
 <p>So if you think of the board variable as defining the places on the board represented in the comments, then you can define the limited set of winning sequences.</p>
 <p>I then created a printBoard() function that does just what you think it does, prints out the game board:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>printBoard</span>():
-    <span style=color:#75715e># Prints the current state of the board</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">printBoard</span>():
+    <span style="color:#75715e"># Prints the current state of the board</span>
     print()
-    print(str(board[<span style=color:#ae81ff>0</span>]) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; | &#34;</span> <span style=color:#f92672>+</span> str(board[<span style=color:#ae81ff>1</span>]) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; | &#34;</span> <span style=color:#f92672>+</span> str(board[<span style=color:#ae81ff>2</span>]))
-    print(<span style=color:#e6db74>&#34;---------&#34;</span>)
-    print(str(board[<span style=color:#ae81ff>3</span>]) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; | &#34;</span> <span style=color:#f92672>+</span> str(board[<span style=color:#ae81ff>4</span>]) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; | &#34;</span> <span style=color:#f92672>+</span> str(board[<span style=color:#ae81ff>5</span>]))
-    print(<span style=color:#e6db74>&#34;---------&#34;</span>)
-    print(str(board[<span style=color:#ae81ff>6</span>]) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; | &#34;</span> <span style=color:#f92672>+</span> str(board[<span style=color:#ae81ff>7</span>]) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; | &#34;</span> <span style=color:#f92672>+</span> str(board[<span style=color:#ae81ff>8</span>]))
+    print(str(board[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; | &#34;</span> <span style="color:#f92672">+</span> str(board[<span style="color:#ae81ff">1</span>]) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; | &#34;</span> <span style="color:#f92672">+</span> str(board[<span style="color:#ae81ff">2</span>]))
+    print(<span style="color:#e6db74">&#34;---------&#34;</span>)
+    print(str(board[<span style="color:#ae81ff">3</span>]) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; | &#34;</span> <span style="color:#f92672">+</span> str(board[<span style="color:#ae81ff">4</span>]) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; | &#34;</span> <span style="color:#f92672">+</span> str(board[<span style="color:#ae81ff">5</span>]))
+    print(<span style="color:#e6db74">&#34;---------&#34;</span>)
+    print(str(board[<span style="color:#ae81ff">6</span>]) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; | &#34;</span> <span style="color:#f92672">+</span> str(board[<span style="color:#ae81ff">7</span>]) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; | &#34;</span> <span style="color:#f92672">+</span> str(board[<span style="color:#ae81ff">8</span>]))
     print()</code></pre></div>
 <p>I also wanted to create a function to check if the current move wins the game since this function would be called after every move. Since I plan on replacing the initial number in the board array with the player character, I need to test if all the indexes in the winning sequence equal the same character. Then if that character equals X, player X wins, otherwise player O wins. Here’s the code I came up with:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>checkForWin</span>(count):
-    <span style=color:#75715e># Checks the board for a winning sequence</span>
-    <span style=color:#66d9ef>for</span> sequence <span style=color:#f92672>in</span> winningSequences:
-        <span style=color:#66d9ef>if</span> board[sequence[<span style=color:#ae81ff>0</span>]] <span style=color:#f92672>==</span> board[sequence[<span style=color:#ae81ff>1</span>]] <span style=color:#f92672>==</span> board[sequence[<span style=color:#ae81ff>2</span>]]:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">checkForWin</span>(count):
+    <span style="color:#75715e"># Checks the board for a winning sequence</span>
+    <span style="color:#66d9ef">for</span> sequence <span style="color:#f92672">in</span> winningSequences:
+        <span style="color:#66d9ef">if</span> board[sequence[<span style="color:#ae81ff">0</span>]] <span style="color:#f92672">==</span> board[sequence[<span style="color:#ae81ff">1</span>]] <span style="color:#f92672">==</span> board[sequence[<span style="color:#ae81ff">2</span>]]:
             printBoard()
-            <span style=color:#66d9ef>if</span> board[sequence[<span style=color:#ae81ff>0</span>]] <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;X&#34;</span>:
-                print(<span style=color:#e6db74>&#34;Player &#39;X&#39; won!!&#34;</span>)
-            <span style=color:#66d9ef>if</span> board[sequence[<span style=color:#ae81ff>0</span>]] <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;O&#34;</span>:
-                print(<span style=color:#e6db74>&#34;Player &#39;O&#39; won!!&#34;</span>)
-            <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span>
-    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span></code></pre></div>
+            <span style="color:#66d9ef">if</span> board[sequence[<span style="color:#ae81ff">0</span>]] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;X&#34;</span>:
+                print(<span style="color:#e6db74">&#34;Player &#39;X&#39; won!!&#34;</span>)
+            <span style="color:#66d9ef">if</span> board[sequence[<span style="color:#ae81ff">0</span>]] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;O&#34;</span>:
+                print(<span style="color:#e6db74">&#34;Player &#39;O&#39; won!!&#34;</span>)
+            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span></code></pre></div>
 <p>This code will return 1 if a player won, and 0 if the game is to continue.</p>
 <p>Finally I started creating code to play the game. Here is what I started with:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>win <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-count <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-<span style=color:#66d9ef>while</span> win <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:  <span style=color:#75715e># =1 for win, =0 to continue play</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">win <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">while</span> win <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:  <span style="color:#75715e"># =1 for win, =0 to continue play</span>
     printBoard()
-    <span style=color:#66d9ef>if</span> count <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:  <span style=color:#75715e># Even count is player X</span>
-        player <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;X&#34;</span>
-    <span style=color:#66d9ef>else</span>:  <span style=color:#75715e># Odd count is player O</span>
-        player <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;O&#34;</span>
-    move <span style=color:#f92672>=</span> int(input(<span style=color:#e6db74>&#34;Player &#34;</span> <span style=color:#f92672>+</span> player <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;: Enter number of space you want to place your piece: &#34;</span>))
-    <span style=color:#66d9ef>while</span> move <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>9</span>) <span style=color:#f92672>or</span> board[move] <span style=color:#f92672>!=</span> move:
-        move <span style=color:#f92672>=</span> int(input(<span style=color:#e6db74>&#34;Please pick an unused space between 0 and 8: &#34;</span>))
-    board[move] <span style=color:#f92672>=</span> player
-    win <span style=color:#f92672>=</span> checkForWin(count)
-    count <span style=color:#f92672>=</span> count <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span></code></pre></div>
+    <span style="color:#66d9ef">if</span> count <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:  <span style="color:#75715e"># Even count is player X</span>
+        player <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;X&#34;</span>
+    <span style="color:#66d9ef">else</span>:  <span style="color:#75715e"># Odd count is player O</span>
+        player <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;O&#34;</span>
+    move <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#34;Player &#34;</span> <span style="color:#f92672">+</span> player <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;: Enter number of space you want to place your piece: &#34;</span>))
+    <span style="color:#66d9ef">while</span> move <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">9</span>) <span style="color:#f92672">or</span> board[move] <span style="color:#f92672">!=</span> move:
+        move <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#34;Please pick an unused space between 0 and 8: &#34;</span>))
+    board[move] <span style="color:#f92672">=</span> player
+    win <span style="color:#f92672">=</span> checkForWin(count)
+    count <span style="color:#f92672">=</span> count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span></code></pre></div>
 <p>So while no one had won, we do the following:</p>
 <p>print the board</p>
 <ul>
@@ -163,167 +257,198 @@ count <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
 <li>increment the count and repeat the while command
 This code worked, unless if no one won. We need to handle the possibility of a draw. The way I handled this problem is to use the count variable that tracks the number of plays. The maximum number of plays for a Tic Tac Toe game is 9. If no one has won after 9 turns (or 8 if counting from 0), then the game is a draw. So this requires us to send the count variable to the checkForWin() function and make the following changes:</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>checkForWin</span>(count):
-    <span style=color:#75715e># Checks the board for a winning sequence</span>
-    <span style=color:#75715e># Also checks if there are no more moves and calls a draw</span>
-    <span style=color:#66d9ef>if</span> count <span style=color:#f92672>==</span> <span style=color:#ae81ff>8</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">checkForWin</span>(count):
+    <span style="color:#75715e"># Checks the board for a winning sequence</span>
+    <span style="color:#75715e"># Also checks if there are no more moves and calls a draw</span>
+    <span style="color:#66d9ef">if</span> count <span style="color:#f92672">==</span> <span style="color:#ae81ff">8</span>:
         printBoard()
-        print(<span style=color:#e6db74>&#34;The game is a draw!&#34;</span>)
-        <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>2</span>
-    <span style=color:#66d9ef>for</span> sequence <span style=color:#f92672>in</span> winningSequences:
-        <span style=color:#66d9ef>if</span> board[sequence[<span style=color:#ae81ff>0</span>]] <span style=color:#f92672>==</span> board[sequence[<span style=color:#ae81ff>1</span>]] <span style=color:#f92672>==</span> board[sequence[<span style=color:#ae81ff>2</span>]]:
+        print(<span style="color:#e6db74">&#34;The game is a draw!&#34;</span>)
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span>
+    <span style="color:#66d9ef">for</span> sequence <span style="color:#f92672">in</span> winningSequences:
+        <span style="color:#66d9ef">if</span> board[sequence[<span style="color:#ae81ff">0</span>]] <span style="color:#f92672">==</span> board[sequence[<span style="color:#ae81ff">1</span>]] <span style="color:#f92672">==</span> board[sequence[<span style="color:#ae81ff">2</span>]]:
             printBoard()
-            <span style=color:#66d9ef>if</span> board[sequence[<span style=color:#ae81ff>0</span>]] <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;X&#34;</span>:
-                print(<span style=color:#e6db74>&#34;Player &#39;X&#39; won!!&#34;</span>)
-            <span style=color:#66d9ef>if</span> board[sequence[<span style=color:#ae81ff>0</span>]] <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;O&#34;</span>:
-                print(<span style=color:#e6db74>&#34;Player &#39;O&#39; won!!&#34;</span>)
-            <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span>
-    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span></code></pre></div>
+            <span style="color:#66d9ef">if</span> board[sequence[<span style="color:#ae81ff">0</span>]] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;X&#34;</span>:
+                print(<span style="color:#e6db74">&#34;Player &#39;X&#39; won!!&#34;</span>)
+            <span style="color:#66d9ef">if</span> board[sequence[<span style="color:#ae81ff">0</span>]] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;O&#34;</span>:
+                print(<span style="color:#e6db74">&#34;Player &#39;O&#39; won!!&#34;</span>)
+            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span></code></pre></div>
 <p>Be sure to change the call to checkForWin() in the while function to send the count variable.</p>
 <p>Now the game worked, but there was no way to continue to play the game without running the program again. In order to play the game multiple times, we would need to put that while loop into its own function. So I created the playGame() funciton:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>playGame</span>():
-    <span style=color:#75715e># while there is not a win or draw, then ask the player for the next move</span>
-    win <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-    count <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-    <span style=color:#66d9ef>while</span> win <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:  <span style=color:#75715e># =1 for win, =2 for draw, =0 to continue play</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">playGame</span>():
+    <span style="color:#75715e"># while there is not a win or draw, then ask the player for the next move</span>
+    win <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">while</span> win <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:  <span style="color:#75715e"># =1 for win, =2 for draw, =0 to continue play</span>
         printBoard()
-        <span style=color:#66d9ef>if</span> count <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:  <span style=color:#75715e># Even count is player X</span>
-            player <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;X&#34;</span>
-        <span style=color:#66d9ef>else</span>:  <span style=color:#75715e># Odd count is player O</span>
-            player <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;O&#34;</span>
-        move <span style=color:#f92672>=</span> int(input(<span style=color:#e6db74>&#34;Player &#34;</span> <span style=color:#f92672>+</span> player <span style=color:#f92672>+</span>
-                   <span style=color:#e6db74>&#34;: Enter number of space you want to place your piece: &#34;</span>))
-        <span style=color:#66d9ef>while</span> move <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>9</span>) <span style=color:#f92672>or</span> board[move] <span style=color:#f92672>!=</span> move:
-            move <span style=color:#f92672>=</span> int(input(<span style=color:#e6db74>&#34;Please pick an unused space between 0 and 8: &#34;</span>))
-        board[move] <span style=color:#f92672>=</span> player
-        win <span style=color:#f92672>=</span> checkForWin(count)
-        count <span style=color:#f92672>=</span> count <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span></code></pre></div>
+        <span style="color:#66d9ef">if</span> count <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:  <span style="color:#75715e"># Even count is player X</span>
+            player <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;X&#34;</span>
+        <span style="color:#66d9ef">else</span>:  <span style="color:#75715e"># Odd count is player O</span>
+            player <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;O&#34;</span>
+        move <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#34;Player &#34;</span> <span style="color:#f92672">+</span> player <span style="color:#f92672">+</span>
+                   <span style="color:#e6db74">&#34;: Enter number of space you want to place your piece: &#34;</span>))
+        <span style="color:#66d9ef">while</span> move <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">9</span>) <span style="color:#f92672">or</span> board[move] <span style="color:#f92672">!=</span> move:
+            move <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#34;Please pick an unused space between 0 and 8: &#34;</span>))
+        board[move] <span style="color:#f92672">=</span> player
+        win <span style="color:#f92672">=</span> checkForWin(count)
+        count <span style="color:#f92672">=</span> count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span></code></pre></div>
 <p>After creating the playGame() function, the complete code would be as follows:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Tic Tac Toe</span>
-<span style=color:#75715e># Build a game of Tic Tac Toe. I would suggest you start off building a two player version then if</span>
-<span style=color:#75715e># you want a little extra challenge see if you can build a version where you get to challenge the</span>
-<span style=color:#75715e># computer. (from https://ryanstutorials.net/programming-challenges/)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Tic Tac Toe</span>
+<span style="color:#75715e"># Build a game of Tic Tac Toe. I would suggest you start off building a two player version then if</span>
+<span style="color:#75715e"># you want a little extra challenge see if you can build a version where you get to challenge the</span>
+<span style="color:#75715e"># computer. (from https://ryanstutorials.net/programming-challenges/)</span>
 
-play <span style=color:#f92672>=</span> input(<span style=color:#e6db74>&#34;Would you like to play Tic Tac Toe? (Y/N) &#34;</span>)
+play <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Would you like to play Tic Tac Toe? (Y/N) &#34;</span>)
 
-<span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#34;y&#34;</span> <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> play<span style=color:#f92672>.</span>lower():
-    print(<span style=color:#e6db74>&#34;Ok, bye!&#34;</span>)
-    exit(<span style=color:#ae81ff>1</span>)
+<span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;y&#34;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> play<span style="color:#f92672">.</span>lower():
+    print(<span style="color:#e6db74">&#34;Ok, bye!&#34;</span>)
+    exit(<span style="color:#ae81ff">1</span>)
 
-<span style=color:#75715e># Game Board:</span>
-<span style=color:#75715e>#</span>
-<span style=color:#75715e># 0 | 1 | 2</span>
-<span style=color:#75715e># ---------</span>
-<span style=color:#75715e># 3 | 4 | 5</span>
-<span style=color:#75715e># ---------</span>
-<span style=color:#75715e># 6 | 7 | 8</span>
+<span style="color:#75715e"># Game Board:</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># 0 | 1 | 2</span>
+<span style="color:#75715e"># ---------</span>
+<span style="color:#75715e"># 3 | 4 | 5</span>
+<span style="color:#75715e"># ---------</span>
+<span style="color:#75715e"># 6 | 7 | 8</span>
 
-board <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>8</span>]
-winningSequences <span style=color:#f92672>=</span> ([<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>6</span>], [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>7</span>], [<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>8</span>], [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>],
-                    [<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>], [<span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>8</span>], [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>8</span>], [<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>6</span>])
+board <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>]
+winningSequences <span style="color:#f92672">=</span> ([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">6</span>], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">7</span>], [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">8</span>], [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>],
+                    [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>], [<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>], [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">8</span>], [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>])
 
 
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>printBoard</span>():
-    <span style=color:#75715e># Prints the current state of the board</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">printBoard</span>():
+    <span style="color:#75715e"># Prints the current state of the board</span>
     print()
-    print(str(board[<span style=color:#ae81ff>0</span>]) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; | &#34;</span> <span style=color:#f92672>+</span> str(board[<span style=color:#ae81ff>1</span>]) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; | &#34;</span> <span style=color:#f92672>+</span> str(board[<span style=color:#ae81ff>2</span>]))
-    print(<span style=color:#e6db74>&#34;---------&#34;</span>)
-    print(str(board[<span style=color:#ae81ff>3</span>]) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; | &#34;</span> <span style=color:#f92672>+</span> str(board[<span style=color:#ae81ff>4</span>]) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; | &#34;</span> <span style=color:#f92672>+</span> str(board[<span style=color:#ae81ff>5</span>]))
-    print(<span style=color:#e6db74>&#34;---------&#34;</span>)
-    print(str(board[<span style=color:#ae81ff>6</span>]) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; | &#34;</span> <span style=color:#f92672>+</span> str(board[<span style=color:#ae81ff>7</span>]) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; | &#34;</span> <span style=color:#f92672>+</span> str(board[<span style=color:#ae81ff>8</span>]))
+    print(str(board[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; | &#34;</span> <span style="color:#f92672">+</span> str(board[<span style="color:#ae81ff">1</span>]) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; | &#34;</span> <span style="color:#f92672">+</span> str(board[<span style="color:#ae81ff">2</span>]))
+    print(<span style="color:#e6db74">&#34;---------&#34;</span>)
+    print(str(board[<span style="color:#ae81ff">3</span>]) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; | &#34;</span> <span style="color:#f92672">+</span> str(board[<span style="color:#ae81ff">4</span>]) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; | &#34;</span> <span style="color:#f92672">+</span> str(board[<span style="color:#ae81ff">5</span>]))
+    print(<span style="color:#e6db74">&#34;---------&#34;</span>)
+    print(str(board[<span style="color:#ae81ff">6</span>]) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; | &#34;</span> <span style="color:#f92672">+</span> str(board[<span style="color:#ae81ff">7</span>]) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; | &#34;</span> <span style="color:#f92672">+</span> str(board[<span style="color:#ae81ff">8</span>]))
     print()
 
 
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>checkForWin</span>(count):
-    <span style=color:#75715e># Checks the board for a winning sequence</span>
-    <span style=color:#75715e># Also checks if there are no more moves and calls a draw</span>
-    <span style=color:#66d9ef>if</span> count <span style=color:#f92672>==</span> <span style=color:#ae81ff>8</span>:
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">checkForWin</span>(count):
+    <span style="color:#75715e"># Checks the board for a winning sequence</span>
+    <span style="color:#75715e"># Also checks if there are no more moves and calls a draw</span>
+    <span style="color:#66d9ef">if</span> count <span style="color:#f92672">==</span> <span style="color:#ae81ff">8</span>:
         printBoard()
-        print(<span style=color:#e6db74>&#34;The game is a draw!&#34;</span>)
-        <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>2</span>
-    <span style=color:#66d9ef>for</span> sequence <span style=color:#f92672>in</span> winningSequences:
-        <span style=color:#66d9ef>if</span> board[sequence[<span style=color:#ae81ff>0</span>]] <span style=color:#f92672>==</span> board[sequence[<span style=color:#ae81ff>1</span>]] <span style=color:#f92672>==</span> board[sequence[<span style=color:#ae81ff>2</span>]]:
+        print(<span style="color:#e6db74">&#34;The game is a draw!&#34;</span>)
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span>
+    <span style="color:#66d9ef">for</span> sequence <span style="color:#f92672">in</span> winningSequences:
+        <span style="color:#66d9ef">if</span> board[sequence[<span style="color:#ae81ff">0</span>]] <span style="color:#f92672">==</span> board[sequence[<span style="color:#ae81ff">1</span>]] <span style="color:#f92672">==</span> board[sequence[<span style="color:#ae81ff">2</span>]]:
             printBoard()
-            <span style=color:#66d9ef>if</span> board[sequence[<span style=color:#ae81ff>0</span>]] <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;X&#34;</span>:
-                print(<span style=color:#e6db74>&#34;Player &#39;X&#39; won!!&#34;</span>)
-            <span style=color:#66d9ef>if</span> board[sequence[<span style=color:#ae81ff>0</span>]] <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;O&#34;</span>:
-                print(<span style=color:#e6db74>&#34;Player &#39;O&#39; won!!&#34;</span>)
-            <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span>
-    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>
+            <span style="color:#66d9ef">if</span> board[sequence[<span style="color:#ae81ff">0</span>]] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;X&#34;</span>:
+                print(<span style="color:#e6db74">&#34;Player &#39;X&#39; won!!&#34;</span>)
+            <span style="color:#66d9ef">if</span> board[sequence[<span style="color:#ae81ff">0</span>]] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;O&#34;</span>:
+                print(<span style="color:#e6db74">&#34;Player &#39;O&#39; won!!&#34;</span>)
+            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
 
 
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>playGame</span>():
-    <span style=color:#75715e># while there is not a win or draw, then ask the player for the next move</span>
-    win <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-    count <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-    <span style=color:#66d9ef>while</span> win <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:  <span style=color:#75715e># =1 for win, =2 for draw, =0 to continue play</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">playGame</span>():
+    <span style="color:#75715e"># while there is not a win or draw, then ask the player for the next move</span>
+    win <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">while</span> win <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:  <span style="color:#75715e"># =1 for win, =2 for draw, =0 to continue play</span>
         printBoard()
-        <span style=color:#66d9ef>if</span> count <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:  <span style=color:#75715e># Even count is player X</span>
-            player <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;X&#34;</span>
-        <span style=color:#66d9ef>else</span>:  <span style=color:#75715e># Odd count is player O</span>
-            player <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;O&#34;</span>
-        move <span style=color:#f92672>=</span> int(input(<span style=color:#e6db74>&#34;Player &#34;</span> <span style=color:#f92672>+</span> player <span style=color:#f92672>+</span>
-                   <span style=color:#e6db74>&#34;: Enter number of space you want to place your piece: &#34;</span>))
-        <span style=color:#66d9ef>while</span> move <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>9</span>) <span style=color:#f92672>or</span> board[move] <span style=color:#f92672>!=</span> move:
-            move <span style=color:#f92672>=</span> int(input(<span style=color:#e6db74>&#34;Please pick an unused space between 0 and 8: &#34;</span>))
-        board[move] <span style=color:#f92672>=</span> player
-        win <span style=color:#f92672>=</span> checkForWin(count)
-        count <span style=color:#f92672>=</span> count <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
+        <span style="color:#66d9ef">if</span> count <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:  <span style="color:#75715e"># Even count is player X</span>
+            player <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;X&#34;</span>
+        <span style="color:#66d9ef">else</span>:  <span style="color:#75715e"># Odd count is player O</span>
+            player <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;O&#34;</span>
+        move <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#34;Player &#34;</span> <span style="color:#f92672">+</span> player <span style="color:#f92672">+</span>
+                   <span style="color:#e6db74">&#34;: Enter number of space you want to place your piece: &#34;</span>))
+        <span style="color:#66d9ef">while</span> move <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">9</span>) <span style="color:#f92672">or</span> board[move] <span style="color:#f92672">!=</span> move:
+            move <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#34;Please pick an unused space between 0 and 8: &#34;</span>))
+        board[move] <span style="color:#f92672">=</span> player
+        win <span style="color:#f92672">=</span> checkForWin(count)
+        count <span style="color:#f92672">=</span> count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
 
 
-<span style=color:#66d9ef>while</span> <span style=color:#e6db74>&#34;y&#34;</span> <span style=color:#f92672>in</span> play<span style=color:#f92672>.</span>lower():
+<span style="color:#66d9ef">while</span> <span style="color:#e6db74">&#34;y&#34;</span> <span style="color:#f92672">in</span> play<span style="color:#f92672">.</span>lower():
     playGame()
-    play <span style=color:#f92672>=</span> input(<span style=color:#e6db74>&#34;Would you like to play again? (Y/N) &#34;</span>)
-    board <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>8</span>]
+    play <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Would you like to play again? (Y/N) &#34;</span>)
+    board <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>]
 
-print(<span style=color:#e6db74>&#34;Thanks for playing&#34;</span>)</code></pre></div>
+print(<span style="color:#e6db74">&#34;Thanks for playing&#34;</span>)</code></pre></div>
 <p>So that is how I solved the Tic Tac Toe programming challenge in Python. Let me know if you solved it in a different way in the comments below.</p>
 <p>As you leave, please enjoy this picture of one of the beautiful beaches of Panama, Red Frog Beach.</p>
 <p>-Brian</p>
-<ul class=pa0>
-<li class=list>
-<a href=/tags/programming class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Programming</a>
-</li>
-<li class=list>
-<a href=/tags/python class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Python</a>
-</li>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/programming" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Programming</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/python" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Python</a>
+   </li>
+  
 </ul>
 <div class="mt6 instapaper_ignoref">
-<div id=commento></div>
-<script defer src=https://cdn.commento.io/js/commento.js></script>
+      
+      <div id="commento"></div>
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/post/garage_door/">Garage Door Controller</a>
+        </li>
+	    
+    </ul>
 </div>
-</div>
-<aside class="w-30-l mt6-l">
-<div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-<p class="f5 b mb3">Related</p>
-<ul class="pa0 list">
-<li class=mb2>
-<a href=/post/garage_door/>Garage Door Controller</a>
-</li>
-</ul>
-</div>
+
 </aside>
-</article>
-</main>
-<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
-<div class="flex justify-between">
-<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=http://programmingaway.com/>
-&copy; Programming Away 2022
-</a>
-<div>
-<div class=ananke-socials>
-<a href=https://github.com/ProgrammingAway target=_blank class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel=noopener aria-label="follow on GitHub——Opens in a new window">
-<span class=icon><svg height="{{ . }}" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://programmingaway.com/" >
+    &copy;  Programming Away 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    <a href="https://github.com/ProgrammingAway" target="_blank" class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel="noopener" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg {{ with .size }} height="{{ . }}" {{ end }} style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
 </span>
-<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
 </span></a>
-<a href=https://www.linkedin.com/in/brian-ladner-a8902bb/ target=_blank class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel=noopener aria-label="follow on LinkedIn——Opens in a new window">
-<span class=icon><svg height="{{ . }}" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
+  
+    <a href="https://www.linkedin.com/in/brian-ladner-a8902bb/" target="_blank" class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg {{ with .size }} height="{{ . }}" {{ end }} style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }};"/>
+</svg>
 </span>
-<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
 </span></a>
+  
 </div></div>
-</div>
+  </div>
 </footer>
-</body>
+
+  </body>
 </html>
